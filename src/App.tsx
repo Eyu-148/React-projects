@@ -1,8 +1,9 @@
-import React from 'react';
-import InputField from './components/InputField';
+import React, {useState} from 'react';
 import './App.css';
 import { Task } from './models/task';
 import TodoList from './components/todoList';
+import InputField from './components/InputField';
+import {nanoid} from 'nanoid';
 
 
 const TODO_DATA:Task[] = [
@@ -12,12 +13,19 @@ const TODO_DATA:Task[] = [
 ];
 
 const App:React.FC = () => {
+  const [tasks, setTasks] = useState<Array<Task>>(TODO_DATA);
+
+  function addTask(name:string) {
+    const newTask = {id: `todo-${nanoid()}`, name, completed: false};
+    setTasks([...tasks, newTask]);
+    alert('Task Added Sucessfully!')
+  }
   
   return (
     <div className="App">
       <span className='heading'>Tasks</span>
-      <InputField />
-      <TodoList tasks = {TODO_DATA}/>
+      <InputField addTask = {addTask}/>
+      <TodoList tasks = {tasks}/>
     </div>
   );
 }

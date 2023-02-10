@@ -1,4 +1,6 @@
 import React from "react";
+import {AiFillEdit, AiFillDelete} from "react-icons/ai";
+import { MdDone } from "react-icons/md";
 
 interface Props {
     id: string;
@@ -23,20 +25,20 @@ const Todo:React.FC<Props> = (props:Props) => {
                 <label className="todo-label" htmlFor={props.id}>
                     {props.name}
                 </label>
-            
             </div>
-            
+
             <div className="btn-group">
-            
-                <button type="button" className="btn">
-                    Edit <span className="visually-hidden">{props.name}</span>
-                </button>
+                <span className="icon">
+                    <AiFillEdit /> 
+                    <span className="visually-hidden">Edit {props.name}</span>
+                </span>
                 
-                <button type="button" className="btn-danger">
-                    Delete <span className="visually-hidden">{props.name}</span>
-                </button>
-            
+                <span className="icon">
+                    <AiFillDelete />
+                    <span className="visually-hidden">Delete {props.name}</span>
+                </span>
             </div>
+            
       </div>
     );
 

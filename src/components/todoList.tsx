@@ -9,6 +9,7 @@ interface Props {
 const TodoList : React.FC<Props> = (props:Props) => {
     return (
         <div className="tasks-container">
+            <ul role="list" className="todo-list stack-large stack-exception" aria-labelledby="list-heading">
             {
                 props.tasks.map((task) => (
                     <Todo 
@@ -19,6 +20,7 @@ const TodoList : React.FC<Props> = (props:Props) => {
                     />
                   ))
             }
+            </ul>
         </div>
     );
 }
