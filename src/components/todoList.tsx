@@ -6,6 +6,7 @@ interface Props {
     tasks: Task[];
     editTasks: Function;
     deleteTask: Function;
+    toggleTaskCompleted: Function;
 }
 
 const TodoList : React.FC<Props> = (props:Props) => {
@@ -22,6 +23,7 @@ const TodoList : React.FC<Props> = (props:Props) => {
                       key={task.id} // You should always pass a unique key to anything you render with iteration
                       editTask = {props.editTasks}
                       deleteTask = {props.deleteTask}
+                      toggleTaskCompleted = {props.toggleTaskCompleted}
                     />
                   ))
             }

@@ -68,11 +68,24 @@ ul {
     box-shadow: 0 0 5px black;
 }
 
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    height: 40px;
+    margin-top: 1%;
+}
+.btn-filter {
+    width: 33%;
+    
+}
+
+
 .tasks-container {
     width: 70%;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
 }
 
 
