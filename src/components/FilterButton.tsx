@@ -8,6 +8,7 @@ interface Props {
 };
 
 const FilterButton:React.FC<Props> = (props:Props) => {
+    //console.log(`${props.name} is pressed: ${props.isPressed}`);
     return (
         <button type="button"
                 className="btn-filter"
