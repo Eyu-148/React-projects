@@ -8,7 +8,7 @@ import FilterButton from './components/FilterButton';
 const FILTER_MAP = {
   All: () => true,
   Active: (task) => !task.completed,
-  completed: (task) => task.completed
+  Completed: (task) => task.completed
 };
 // using Object.keys() to collect an array
 const FILTER_NAMES = Object.keys(FILTER_MAP);
