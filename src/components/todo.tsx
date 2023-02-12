@@ -15,6 +15,7 @@ interface Props {
 const Todo:React.FC<Props> = (props:Props) => {
     const [isEditing, setEditing] = useState(false);
     const [newName, setNewName] = useState("");
+    console.log(`${props.name} is ${props.completed}`);
 
     const editingTemplate = (
         <form className="stack-small" onSubmit={handleSubmit}>
@@ -47,7 +48,8 @@ const Todo:React.FC<Props> = (props:Props) => {
                 <input id={props.id} 
                         type="checkbox" 
                         defaultChecked={props.completed}
-                        onChange={()=>props.toggleTaskCompleted(props.id)} 
+                        onChange={()=>{props.toggleTaskCompleted(props.id); 
+                                       console.log(`${props.name} is completed:${props.completed}`);}} 
                 />
                 <label className="todo-label" htmlFor={props.id}>
                     {props.name}
